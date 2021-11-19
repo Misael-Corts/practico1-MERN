@@ -18,7 +18,13 @@ function getCountryByIso3(isoCode) {
  * @param  {string} language example: "es"
  * @returns {string}
  */
-function getCountryTranslatedName(isoCode, language) {}
+function getCountryTranslatedName(isoCode, language) {
+  for (let i = 0; i < countries.length; i++) {
+    if (countries[i].iso3 == isoCode) {
+      return countries[i].translations[language];
+    }
+  }
+}
 /**Get an array of all the countries with the specified subregion
  * @param  {string} subregion
  * @returns {Array}
