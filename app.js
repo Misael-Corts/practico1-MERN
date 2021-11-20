@@ -29,18 +29,28 @@ function getCountryTranslatedName(isoCode, language) {
  * @param  {string} subregion
  * @returns {Array}
  */
-function getCountriesBySubregion(subregion) {}
+function getCountriesBySubregion(subregion) {
+  let array = [];
+  for (let i = 0; i < countries.length; i++) {
+    if (countries[i].subregion == subregion) {
+      array.push(countries[i].name);
+    }
+  }
+  return array;
+}
 
 function main() {
   console.log("///// Ejercicio 1 /////\n", getCountryByIso3("ARG"), "\n");
+
   console.log(
     "///// Ejercicio 2 /////\n",
-    getCountryTranslatedName("ARG", "kr"),
+    getCountryTranslatedName("ARG", "ja"),
     "\n"
   );
+
   console.log(
     "///// Ejercicio 3 /////\n",
-    getCountriesBySubregion("Southern Asia"),
+    getCountriesBySubregion("South America"),
     "\n"
   );
 }
